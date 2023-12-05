@@ -1,0 +1,11 @@
+@import "./colors";
+@import "./grid";
+
+.title {
+  color: $blue-200;
+  border-bottom: solid 2px darken($blue-300, 10);
+
+  strong {
+    color: $black-700;
+  }
+}
