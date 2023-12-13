@@ -6,7 +6,7 @@ import LinkButton from "@/component/link";
 
 export default function Hero() {
   return (
-    <div className={style.container}>
+    <div className={style.container} id="inicio">
       <div className={styles.heroContainer}>
         <div className={styles.titleMobile}>
           <h1>Aumente suas receitas com o mercado livre de energia.</h1>
@@ -28,7 +28,7 @@ export default function Hero() {
           <p>Você será remunerado por cada novo contrato que fecharmos juntos!</p>
 
           <div>
-            <LinkButton url="google.com" label="Fale com a Kivolt" typeBtn="green" />
+            <LinkButton url="#fale-com-a-kivolt" label="Fale com a Kivolt" typeBtn="green" />
           </div>
 
         </div>

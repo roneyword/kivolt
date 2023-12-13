@@ -1,88 +1,77 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #d9d9d9;
-  padding: 1.62rem 7.88rem;
+  position: fixed;
+  top: 0;
+  padding: 1.5rem 0px;
   width: 100vw;
+  border-bottom: 2px solid #d9d9d9;
+  z-index: 100;
 
-  @media (max-width: 993px) {
-    padding: 1.62rem 3.88rem;
+  background: #f6f6f6;
+
+  .headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: 890px) {
+      flex-wrap: wrap;
+    }
 
     figure {
-      width: 9.19006rem;
-      height: 2.42138rem;
-
-      img {
+      @media (max-width: 890px) {
+        display: flex;
+        justify-content: center;
         width: 100%;
-        height: auto;
-      }
-    }
-  }
+        margin: 0 auto;
 
-  @media (max-width: 736px) {
-    padding: 1.62rem 2.34rem;
-    flex-wrap: wrap;
-    gap: 1.66rem 20px;
-  }
-
-  figure {
-    @media (max-width: 993px) {
-      width: 9.19006rem;
-      height: 2.42138rem;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 736px) {
-      width: 100%;
-      text-align: center;
-
-      img {
-        width: 9.19006rem;
-        height: 2.42138rem;
-      }
-    }
-  }
-
-  ul {
-    width: 100%;
-    max-width: 813px;
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-
-    @media (max-width: 993px) {
-      max-width: 407px;
-      gap: 1.4rem;
-    }
-
-    @media (max-width: 736px) {
-      flex: 1;
-      max-width: 100%;
-      gap: 0.4rem;
-    }
-
-    li {
-      list-style: none;
-
-      a {
-        color: #10171f;
-        font-family: Inter;
-        font-size: 1.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 99.023%;
-        letter-spacing: -0.05625rem;
-
-        @media (max-width: 993px) {
-          font-size: 0.875rem;
-          letter-spacing: -0.02625rem;
+        img {
+          width: 6.69006rem;
+          height: 1.76269rem;
         }
       }
+    }
+
+    ul {
+      width: 100%;
+      max-width: 813px;
+      display: flex;
+      margin-top: 15px;
+      padding: 0 40px;
+      justify-content: space-around;
+
+      @media (max-width: 890px) {
+        padding: 0px;
+        justify-content: space-between;
+        width: 70%;
+      }
+
+      @media (max-width: 768px) {
+        justify-content: space-between;
+        width: 75%;
+      }
+
+      li {
+        list-style: none;
+
+        a {
+          color: #10171f;
+          font-family: Inter;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 99.023%;
+          letter-spacing: -0.03rem;
+
+          @media (max-width: 628px) {
+            font-size: 0.60681rem;
+          }
+        }
+      }
+    }
+
+    .headerBtn {
+      margin-top: 15px;
     }
   }
 }

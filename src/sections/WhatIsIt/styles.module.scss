@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 6.26rem;
+  margin-top: 4.29rem;
+  margin-bottom: 7.29rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 425px) {
+    gap: 4.26rem;
+  }
+
+  .accordion {
+    width: 50%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .imgs {
+    display: flex;
+    gap: 10px;
+    width: 50%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      line-height: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

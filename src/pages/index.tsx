@@ -16,9 +16,8 @@ export default function Home() {
       <HowKivolthelp />
       <WhatfreeEnergy />
       <Form />
-      {/*
       <WhatIsIt />
-      <Footer /> */}
+      <Footer />
     </>
   )
 }

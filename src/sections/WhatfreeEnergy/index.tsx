@@ -7,7 +7,8 @@ import styles from "@/sections/WhatfreeEnergy/styles.module.scss"
 
 export default function WhatfreeEnergy() {
   return (
-    <section className={style.conatainerLong}>
+    <section className={style.conatainerLong} id="principais-duvidas
+    ">
       <div className={styles.whatfreeEnergyContainer}>
         <div className={styles.content}>
           <h2>O que é o mercado livre de energia?</h2>
@@ -26,7 +27,7 @@ export default function WhatfreeEnergy() {
           </p>
 
           <div>
-            <LinkButton url="https:www.google.com" label="Quero ter acesso as melhores propostas" typeBtn="green" />
+            <LinkButton url="#fale-com-a-kivolt" label="Quero ter acesso as melhores propostas" typeBtn="green" />
           </div>
         </div>
 

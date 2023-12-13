@@ -2,14 +2,10 @@
 
 .formWrapper {
   width: 100%;
-  margin-top: 7.88rem;
+  margin-top: 5.29rem;
   background: $blue-200;
   border-radius: 2.09519rem;
-  padding: 4.5rem 14.31rem;
-  // background-image: url("../../assets/form/bg-form.png");
-  // background-size: 75%;
-  // background-position: -17% 45%;
-  // background-repeat: no-repeat;
+  padding: 3.94rem 8.25rem;
 
   background-image: url("../../assets/form/Layer_1.png");
   background-size: 90%;
@@ -17,43 +13,69 @@
   background-repeat: no-repeat;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    padding: 2.29rem 5.78rem;
+  }
+
+  @media (max-width: 650px) {
+    padding: 2.06rem 1.81rem;
+    border-radius: 1.15256rem;
+  }
+
+  @media (max-width: 650px) {
+    background-image: url("../../assets/form/4-fundo-formulário.png");
+    background-size: 111%;
+    background-position: 60% 45%;
+    margin-top: 2.38rem;
+  }
+
   .formTitle {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 1.62rem;
     margin-bottom: 2.5rem;
 
     & > h2 {
+      max-width: 1200px;
       color: #fff;
       text-align: center;
       font-family: Inter;
-      font-size: 4rem;
+      font-size: 2.6875rem;
       font-style: normal;
       font-weight: 600;
       line-height: 99.023%;
-      letter-spacing: -0.12rem;
-      max-width: 1200px;
+      letter-spacing: -0.08063rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.875rem;
+      }
     }
 
     & > p {
+      max-width: 375px;
       color: #fff;
+      text-align: center;
       font-family: Inter;
-      font-size: 1.875rem;
+      font-size: 1.0625rem;
       font-style: normal;
       font-weight: 600;
       line-height: 99.023%;
-      letter-spacing: -0.05625rem;
-      max-width: 450px;
+      letter-spacing: -0.03188rem;
     }
   }
 
   .formContainer {
     display: flex;
     justify-content: space-between;
-    gap: 9.38rem;
+    gap: 3.88rem;
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
 
     .formRow {
       flex: 1;
