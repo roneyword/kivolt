@@ -4,8 +4,7 @@ import style from "@/sections/HowKivoltHelp/styles.module.scss";
 
 export default function HowKivolthelp() {
   return (
-    <section className={styles.container} id="como-te-ajudamos
-    ">
+    <section className={styles.container} id="como-te-ajudamos">
       <div className={style.howKivolthelpContainer}>
         <div className={style.content}>
           <h2>Como a Kivolt vai ajudar a

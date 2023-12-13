@@ -5,8 +5,7 @@ import imagem from "@/assets/whoIsKivolt/who-is-kivolt.png"
 
 export default function WhoisKivolt() {
   return (
-    <section className={style.conatainerLong} id="sobre-a-kivolt
-    ">
+    <section className={style.conatainerLong} id="sobre-a-kivolt">
       <div className={styles.whoisKivoltContainer}>
         <div className={styles.content}>
           <h2>Quem é a Kivolt</h2>

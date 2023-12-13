@@ -31,6 +31,13 @@ body {
   }
 }
 
+@media (max-width: 425px) {
+  html,
+  body {
+    scroll-padding-top: 140px;
+  }
+}
+
 body,
 input,
 text-area,

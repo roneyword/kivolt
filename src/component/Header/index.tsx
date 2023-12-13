@@ -22,12 +22,9 @@ export default function Header() {
 
           <ul>
             <li><Link href="#inicio" className="header__logo">Início</Link></li>
-            <li><Link href="#sobre-a-kivolt
-" className="header__logo">Sobre nós</Link></li>
-            <li><Link href="#como-te-ajudamos
-" className="header__logo">Como te ajudamos</Link></li>
-            <li><Link href="#principais-duvidas
-" className="header__logo">Dúvidas</Link></li>
+            <li><Link href="#sobre-a-kivolt" className="header__logo">Sobre nós</Link></li>
+            <li><Link href="#como-te-ajudamos" className="header__logo">Como te ajudamos</Link></li>
+            <li><Link href="#principais-duvidas" className="header__logo">Dúvidas</Link></li>
           </ul>
 
           <div className={styles.headerBtn}>

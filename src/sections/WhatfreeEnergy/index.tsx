@@ -7,8 +7,7 @@ import styles from "@/sections/WhatfreeEnergy/styles.module.scss"
 
 export default function WhatfreeEnergy() {
   return (
-    <section className={style.conatainerLong} id="principais-duvidas
-    ">
+    <section className={style.conatainerLong} id="principais-duvidas">
       <div className={styles.whatfreeEnergyContainer}>
         <div className={styles.content}>
           <h2>O que é o mercado livre de energia?</h2>
