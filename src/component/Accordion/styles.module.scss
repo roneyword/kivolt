@@ -41,6 +41,11 @@
           margin-top: 2rem;
           max-height: 500px;
           transition: all 0.3s linear;
+
+          & > svg {
+            transition: all 0.3s linear;
+            transform: rotate(-90deg);
+          }
         }
       }
 
@@ -61,6 +66,10 @@
           @media (max-width: 425px) {
             font-size: 1.875rem;
           }
+        }
+
+        & > svg {
+          transform: rotate(-90deg);
         }
       }
 
