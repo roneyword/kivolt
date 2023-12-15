@@ -28,7 +28,7 @@ export default function Header() {
           </ul>
 
           <div className={styles.headerBtn}>
-            <Button label='login' typeBtn='default' />
+            <Button label='Login' typeBtn='default' />
           </div>
         </div>
 
