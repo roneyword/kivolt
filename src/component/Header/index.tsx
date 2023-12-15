@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "@/assets/header/logo.png";
+import logo from "@/assets/header/logo.svg";
 import styles from "@/component/Header/styles.module.scss";
 import style from "@/styles/home.module.scss"
 
@@ -25,11 +25,12 @@ export default function Header() {
             <li><Link href="#sobre-a-kivolt" className="header__logo">Sobre nós</Link></li>
             <li><Link href="#como-te-ajudamos" className="header__logo">Como te ajudamos</Link></li>
             <li><Link href="#principais-duvidas" className="header__logo">Dúvidas</Link></li>
+            <li> <Button label='Login' typeBtn='default' /></li>
           </ul>
 
-          <div className={styles.headerBtn}>
+          {/* <div className={styles.headerBtn}>
             <Button label='Login' typeBtn='default' />
-          </div>
+          </div> */}
         </div>
 
       </div>

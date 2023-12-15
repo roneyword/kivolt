@@ -15,10 +15,19 @@
     width: 100%;
 
     @media (max-width: 890px) {
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
     figure {
+      width: 100%;
+      max-width: 10rem;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
       @media (max-width: 890px) {
         display: flex;
         justify-content: center;
@@ -36,19 +45,17 @@
       width: 100%;
       max-width: 813px;
       display: flex;
+      align-items: center;
       margin-top: 15px;
       padding: 0 40px;
       justify-content: space-around;
 
-      @media (max-width: 890px) {
-        padding: 0px;
-        justify-content: space-between;
-        width: 70%;
-      }
-
       @media (max-width: 768px) {
         justify-content: space-between;
-        width: 60%;
+      }
+
+      @media (max-width: 498px) {
+        padding: 0px;
       }
 
       li {

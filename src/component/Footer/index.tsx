@@ -4,7 +4,8 @@ import style from "@/component/Footer/styles.module.scss"
 import faceIcon from "@/assets/icons/icon-facebook.svg"
 import instaIcon from "@/assets/icons/icon-instagram.svg"
 import linkIcon from "@/assets/icons/icon-linkedin.svg"
-import iconFooter from "@/assets/icons/Logo-branca.png"
+// import iconFooter from "@/assets/icons/Logo-branca.png"
+import iconFooter from "@/assets/footer/logo-footer.svg"
 import styles from "@/styles/home.module.scss"
 
 
@@ -14,7 +15,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={style.footerWrapper}>
           <figure>
-            <Image src={iconFooter} alt="logo do facebook" />
+            <Image src={iconFooter} alt="logo da kivolt" />
           </figure>
 
           <div className={style.content}>
