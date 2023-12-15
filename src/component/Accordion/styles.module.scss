@@ -9,6 +9,7 @@
       padding-left: 2.94rem;
       border-left: 6px solid #9f9f9f;
       padding-bottom: 2rem;
+      cursor: pointer;
 
       &:last-child {
         padding-bottom: 0;
@@ -37,15 +38,17 @@
           transition: all 0.3s linear;
         }
 
+        .accordionHeader {
+          & > svg {
+            transition: all 0.3s linear;
+            transform: rotate(0deg);
+          }
+        }
+
         .acordionContent {
           margin-top: 2rem;
           max-height: 500px;
           transition: all 0.3s linear;
-
-          & > svg {
-            transition: all 0.3s linear;
-            transform: rotate(90deg);
-          }
         }
       }
 
