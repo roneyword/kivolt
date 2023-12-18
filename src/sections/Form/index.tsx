@@ -4,6 +4,7 @@ import styles from "./styles.module.scss"
 import TextArea from "@/component/Textarea";
 import { ChangeEvent, useState } from "react";
 import Button from "@/component/Button";
+import { postLead } from "@/utlls/api";
 
 const maskPhone12 = ['(', /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/];
 
@@ -24,7 +25,7 @@ interface LoginProps {
     value: string,
     error: boolean,
   },
-  mensage: {
+  message: {
     value: string,
     error: boolean,
   },
@@ -33,7 +34,7 @@ interface LoginProps {
 const initialValues = {
   name: {
     value: "",
-    error: true,
+    error: false,
   },
   phone: {
     value: "",
@@ -47,7 +48,7 @@ const initialValues = {
     value: "",
     error: false,
   },
-  mensage: {
+  message: {
     value: "",
     error: false,
   },
@@ -59,13 +60,12 @@ export default function Form() {
   const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
     const targetName = event.target.name;
     const targetValue = event.target.value;
-    const targetRequired = event.target.required;
 
     setInputsValues({
       ...inputsValues,
       [targetName]: {
         value: targetValue,
-        error: false,
+        error: onValidateError(targetValue, targetName),
       },
     });
   };
@@ -73,18 +73,56 @@ export default function Form() {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const data = {
-      name: inputsValues.name.value,
-      phone: inputsValues.phone.value,
-      city: inputsValues.city.value,
-      email: inputsValues.email.value,
-      mensage: inputsValues.mensage.value,
-    };
+    const hasError = onValidateFieldsEmpty();
 
-    console.log(data);
-    console.log(inputsValues);
+    if (!Object.values(inputsValues).some((field) => field.error)) {
+      const data = {
+        name: inputsValues.name.value,
+        phone: inputsValues.phone.value,
+        city: inputsValues.city.value,
+        email: inputsValues.email.value,
+        message: inputsValues.message.value,
+      };
+
+      getServerSideProps(data);
+    }
 
   };
+
+  const onValidateError = (value: string, field: string) => {
+
+    if (field === "name" || field === "city" || field === "message") {
+      return value.length < 3 ? true : false
+    }
+
+    if (field === "phone") {
+      return value.length < 15 ? true : false
+    }
+
+    if (field === "email") {
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      return !emailRegex.test(value) ? true : false
+    }
+
+    return true
+  }
+
+  const onValidateFieldsEmpty = () => {
+    setInputsValues((prevValues) => {
+      const updatedValues: LoginProps = { ...prevValues };
+
+      for (const key in updatedValues) {
+        if (updatedValues.hasOwnProperty(key) && updatedValues[key as keyof LoginProps].value === '') {
+          updatedValues[key as keyof LoginProps].error = true;
+        } else {
+          updatedValues[key as keyof LoginProps].error = false;
+        }
+      }
+
+      return updatedValues;
+    });
+  };
+
 
   return (
     <section className={style.conatainerLong} id="fale-com-a-kivolt">
@@ -102,7 +140,7 @@ export default function Form() {
           </div>
           <div className={styles.formRow}>
             <Input label="E-mail" name="email" onChange={handleChange} error={inputsValues.email.error} />
-            <TextArea label="Mensagem" name="mensage" onChange={handleChange} error={inputsValues.mensage.error} />
+            <TextArea label="Mensagem" name="message" onChange={handleChange} error={inputsValues.message.error} />
           </div>
         </form>
 
@@ -113,4 +151,28 @@ export default function Form() {
       </div>
     </section>
   )
+}
+
+export async function getServerSideProps(data: any) {
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const auth = process.env.NEXT_PUBLIC_API_AUTH;
+  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+  try {
+    const result = await postLead(data, apiKey, auth, baseURL);
+
+    return {
+      props: {
+        apiResponse: result,
+      },
+    };
+  } catch (error: any) {
+    console.error('Erro ao chamar a API no SSR:', error.message);
+
+    return {
+      props: {
+        apiResponse: null,
+      },
+    };
+  }
 }
