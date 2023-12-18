@@ -7,17 +7,18 @@ import WhatIsIt from '@/sections/WhatIsIt';
 import WhatfreeEnergy from '@/sections/WhatfreeEnergy';
 import WhoisKivolt from '@/sections/WhoisKivolt';
 
+
 export default function Home() {
   return (
     <>
-      <Header />
-      <Hero />
-      <WhoisKivolt />
-      <HowKivolthelp />
-      <WhatfreeEnergy />
+      {/* <Header /> */}
+      {/* <Hero /> */}
+      {/* <WhoisKivolt /> */}
+      {/* <HowKivolthelp /> */}
+      {/* <WhatfreeEnergy /> */}
       <Form />
-      <WhatIsIt />
-      <Footer />
+      {/* <WhatIsIt /> */}
+      {/* <Footer /> */}
     </>
   )
 }

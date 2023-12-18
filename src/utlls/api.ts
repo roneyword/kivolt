@@ -3,10 +3,6 @@ export const postLead = async (data: any, apiKey: string = "", auth: string = ""
   // const auth = process.env.NEXT_PUBLIC_API_AUTH;
   // const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-  console.log(apiKey)
-  console.log(auth)
-  console.log(baseURL)
-
   if (!apiKey) {
     throw new Error('API Key não encontrada.');
   }

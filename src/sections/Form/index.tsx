@@ -1,3 +1,4 @@
+
 import Input from "@/component/Input";
 import style from "@/styles/home.module.scss"
 import styles from "./styles.module.scss"
@@ -73,7 +74,7 @@ export default function Form() {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const hasError = onValidateFieldsEmpty();
+    onValidateFieldsEmpty();
 
     if (!Object.values(inputsValues).some((field) => field.error)) {
       const data = {
@@ -85,6 +86,8 @@ export default function Form() {
       };
 
       getServerSideProps(data);
+      // postLead(data);
+      // getTeste(data);
     }
 
   };
@@ -153,10 +156,14 @@ export default function Form() {
   )
 }
 
-export async function getServerSideProps(data: any) {
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-  const auth = process.env.NEXT_PUBLIC_API_AUTH;
-  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+async function getServerSideProps(data: any) {
+  const apiKey = process.env.API_KEY;
+  const auth = process.env.API_AUTH;
+  const baseURL = process.env.API_BASE_URL;
+
+  console.log(apiKey)
+  console.log(auth)
+  console.log(baseURL)
 
   try {
     const result = await postLead(data, apiKey, auth, baseURL);
