@@ -156,7 +156,7 @@ export default function Form() {
   )
 }
 
-async function getServerSideProps(data: any) {
+export async function getServerSideProps(data: any) {
   const apiKey = process.env.API_KEY;
   const auth = process.env.API_AUTH;
   const baseURL = process.env.API_BASE_URL;
